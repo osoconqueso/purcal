@@ -1,0 +1,1 @@
+{"virtualbox":{"/var/www/purcal":{"guestpath":"/var/www/purcal","hostpath":"/home/samir/htdocs/purcal","disabled":false,"__vagrantfile":true}}}
