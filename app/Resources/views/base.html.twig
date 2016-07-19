@@ -1,13 +1,68 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <!--<script>-->
+    <!--        var main = function {-->
+    <!--            $('#allocate').click(function() {-->
+    <!--                $('#allocate').fadeOut("slow", .5);-->
+    <!--            });-->
+    <!--        }-->
+    <!---->
+    <!--        $(document).ready(main);-->
+    <!--</script>-->
+
+    <link type="text/css" property="stylesheet" rel="stylesheet" href="syspurstyle.css"/>
+
+    <title>Systematic Purchase Calculator</title>
+
+</head>
+
+<body>
+
+<div>
+    <h1>Systematic Purchase Calculator</h1>
+</div>
+
+<form action="{{ path('app_main') }}" method = "post">
+
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th class="head">Account Type</th>
+                <th class="head">Risk Tolerance</th>
+                <th class="head">Model</th>
+                <th class="head">Dollar Amount to be Invested</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <select name="portfolio">
+                        <option value="growth">Growth</option>
+                        <option value="agggrowth">Aggressive Growth</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="model">
+                        <option value="AGNQ">Agg Growth NQ</option>
+                        <option value="GNQ">Growth NQ</option>
+                        <option value="GIRA">Growth IRA</option>
+                        <option value="AGIRA">Agg Growth IRA</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" name="dollaramount" />
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h3 id = "allocate"><input type = "submit" name= "allocate" value="Allocate!"></h3>
+    </div>
+
+</form>
+</body>
 </html>
