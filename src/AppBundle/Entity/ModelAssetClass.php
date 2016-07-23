@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToOne;
 
 /**
  * ModelAssetClass
@@ -23,22 +24,21 @@ class ModelAssetClass
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="account_type_id", type="integer")
+     * @ManyToOne(targetEntity="AppBundle\Entity\AccountType", cascade={"all"}, fetch="EAGER")
      */
-    private $accountTypeId;
+    private $accountType;
 
     /**
      * @var int
-     * @ORM\Column(name="model_id", type="integer")
+     * @ManyToOne(targetEntity="AppBundle\Entity\Model", cascade={"all"}, fetch="EAGER")
      */
-    private $modelId;
+    private $model;
 
     /**
      * @var int
-     * @ORM\Column(name="asset_class_id", type="integer")
+     * @ManyToOne(targetEntity="AppBundle\Entity\AssetClass", cascade={"all"}, fetch="EAGER")
      */
-    private $assetClassId;
+    private $assetClass;
 
     /**
      * @var int
@@ -57,59 +57,51 @@ class ModelAssetClass
     }
 
     /**
-     * Set accountTypeId
-     *
-     * @param integer $accountTypeId
-     *
-     * @return ModelAssetClass
+     * @return int
      */
-    public function setAccountTypeId($accountTypeId)
+    public function getAccountType()
     {
-        $this->accountTypeId = $accountTypeId;
-
-        return $this;
+        return $this->accountType;
     }
 
     /**
-     * Get accountTypeId
-     *
-     * @return int
+     * @param int $accountType
      */
-    public function getAccountTypeId()
+    public function setAccountType($accountType)
     {
-        return $this->accountTypeId;
+        $this->accountType = $accountType;
     }
 
     /**
      * @return int
      */
-    public function getModelId()
+    public function getModel()
     {
-        return $this->modelId;
+        return $this->model;
     }
 
     /**
-     * @param int $modelId
+     * @param int $model
      */
-    public function setModelId($modelId)
+    public function setModel($model)
     {
-        $this->modelId = $modelId;
+        $this->model = $model;
     }
 
     /**
      * @return int
      */
-    public function getAssetClassId()
+    public function getAssetClass()
     {
-        return $this->assetClassId;
+        return $this->assetClass;
     }
 
     /**
-     * @param int $assetClassId
+     * @param int $assetClass
      */
-    public function setAssetClassId($assetClassId)
+    public function setAssetClass($assetClass)
     {
-        $this->assetClassId = $assetClassId;
+        $this->assetClass = $assetClass;
     }
 
     /**
@@ -128,6 +120,4 @@ class ModelAssetClass
         $this->percentageValue = $percentageValue;
     }
 
-
 }
-
