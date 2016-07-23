@@ -2,7 +2,10 @@
 <html>
 <head>
 
-    <link type="text/css" property="stylesheet" rel="stylesheet" href="syspurstyle.css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" rel="stylesheet">
+
+    {#<link type="text/css" property="stylesheet" rel="stylesheet" href="syspurstyle.css"/>#}
 
     <title>Systematic Purchase Calculator</title>
 
@@ -14,46 +17,64 @@
     <h1>Systematic Purchase Calculator</h1>
 </div>
 
-<form action="{{ path('app_main') }}" method = "post">
+<form method="post">
 
-    <div>
-        <table>
-            <thead>
-            <tr>
-                <th class="head">Account Type</th>
-                <th class="head">Risk Tolerance</th>
-                <th class="head">Model</th>
-                <th class="head">Dollar Amount to be Invested</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>
-                    <select name="portfolio">
-                        <option value="growth">Growth</option>
-                        <option value="agggrowth">Aggressive Growth</option>
-                    </select>
-                </td>
-                <td>
-                    <select name="model">
-                        <option value="AGNQ">Agg Growth NQ</option>
-                        <option value="GNQ">Growth NQ</option>
-                        <option value="GIRA">Growth IRA</option>
-                        <option value="AGIRA">Agg Growth IRA</option>
-                    </select>
-                </td>
-                <td>
-                    <input type="text" name="dollaramount" />
-                </td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="container">
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <h4>Account Type</h4>
+            </div>
+            <div class="col-md-3">
+                <h4>Risk Tolerance</h4>
+            </div>
+            <div class="col-md-3">
+                <h4>Model</h4>
+            </div>
+            <div class="col-md-2">
+                <h4>$$</h4>
+            </div>
+            <div>
+                <div class="dropdown col-md-3">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown
+                        Example
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">NQ</a></li>
+                        <li><a href="#">IRA</a></li>
+                        <li><a href="#">401k</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown col-md-3">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown
+                        Example
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Growth</a></li>
+                        <li><a href="#">Aggressive Growth</a></li>
+                        <li><a href="#">Income and Growth</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown col-md-3">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown
+                        Example
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">IVV/NCLEX</a></li>
+                        <li><a href="#">Passive Core</a></li>
+                        <li><a href="#">Vang/NCLEX</a></li>
+                    </ul>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="dollaramount"> </label>
+                    <input type="text" class="form-control" id="dollaramount">
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <input type="submit" class="btn btn-info col-md-1" value="Allocate!">
+        </div>
+
     </div>
-
-    <div>
-        <h3 id = "allocate"><input type = "submit" name= "allocate" value="Allocate!"></h3>
-    </div>
-
-</form>
 </body>
 </html>
