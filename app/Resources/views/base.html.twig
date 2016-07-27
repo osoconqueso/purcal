@@ -2,8 +2,16 @@
 <html>
 <head>
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+            integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 
     <title>Systematic Purchase Calculator</title>
 
@@ -11,35 +19,32 @@
 
 <body>
 
+<script>
+    $(document).ready(function () {
+        $('.dropdown-toggle').dropdown();
+    });
+</script>
+
 <div>
     <h1 class="text-center">Systematic Purchase Calculator</h1>
 </div>
 
-<br />
-<br />
-<br />
+<br/>
+<br/>
+<br/>
 
 <form method="post">
 
     <div class="container">
         <div class="row">
-            {#<div class="dropdown col-md-3">#}
-                {#<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Account Type#}
-                    {#<span class="caret"></span></button>#}
-                {#<ul class="dropdown-menu">#}
-                    {#<li><a href="#">NQ</a></li>#}
-                    {#<li><a href="#">IRA</a></li>#}
-                    {#<li><a href="#">401k</a></li>#}
-                {#</ul>#}
-            {#</div>#}
             <div class="dropdown col-md-3">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Account type
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Account type
                     <span class="caret"></span></button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button">NQ/button>
-                    <button class="dropdown-item" type="button">Qualified</button></button>
-                </div>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><a href="#">NQ</a></li>
+                    <li><a href="#">Qualified</a></li>
+                </ul>
             </div>
             <div class="dropdown col-md-3">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Risk Tolerance
