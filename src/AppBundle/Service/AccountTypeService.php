@@ -7,9 +7,9 @@ use Doctrine\Bundle\DoctrineBundle\Registry;
 use AppBundle\Entity\AccountType;
 
 /**
- * Class CategoryService
+ * Class AccountTypeService
  * @package AppBundle\Service
- */
+ */ 
 class AccountTypeService
 {
     /**
@@ -33,17 +33,17 @@ class AccountTypeService
      */
     public function __construct(Registry $registry)
     {
-        $this->categoryRepo = $registry->getManager()->getRepository('AppBundle:AccountType');
+        $this->accountTypeRepo = $registry->getManager()->getRepository('AppBundle:AccountType');
     }
 
     /**
-     * Get all categories for the site
+     * Get all account types from db
      * @return AccountType[]
      */
     public function getAllAccountTypes()
     {
         if (!isset($this->accountType)) {
-            $this->accountType = $this->accountTypeRepo->findBy([], ['name' => 'asc']);;
+            $this->accountType = $this->accountTypeRepo->findBy([], ['type' => 'asc']);
         }
 
         return $this->accountType;

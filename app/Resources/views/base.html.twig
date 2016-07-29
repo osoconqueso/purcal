@@ -38,32 +38,13 @@
     <div class="container">
         <div class="row">
             <div class="dropdown col-md-3">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Account type
-                    <span class="caret"></span></button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <li><a href="#">NQ</a></li>
-                    <li><a href="#">Qualified</a></li>
-                </ul>
-                {#{% include('AppBundle:Fragments:dropdown.html.twig') %}#}
+                {% include('AppBundle:Fragments:accounttype.dropdown.html.twig') %}
             </div>
             <div class="dropdown col-md-3">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Risk Tolerance
-                    <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Growth</a></li>
-                    <li><a href="#">Aggressive Growth</a></li>
-                    <li><a href="#">Income and Growth</a></li>
-                </ul>
+                {% include('AppBundle:Fragments:risktol.dropdown.html.twig') %}
             </div>
             <div class="dropdown col-md-3">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Model
-                    <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">IVV/NCLEX</a></li>
-                    <li><a href="#">Passive Core</a></li>
-                    <li><a href="#">Vang/NCLEX</a></li>
-                </ul>
+               {% include('AppBundle:Fragments:model.dropdown.html.twig') %}
             </div>
             <div class="form-group col-md-3">
                 <label for="dollaramount"> </label>
