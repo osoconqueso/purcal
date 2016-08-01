@@ -1,6 +1,6 @@
 <select>
     {% for i in accountTypes %}
-        {% if app.request.get('acct_type') == i.type %}
+        {% if app.request.get('acctType') == i.type %}
             <option value="{{ i.type }}" selected>{{ i.type }}</option>
         {% else %}
             <option value="{{ i.type }}">{{ i.type }}</option>

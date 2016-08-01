@@ -1,6 +1,6 @@
 <select>
     {% for i in riskTolerances %}
-        {% if app.request.get('risk_tol') == i.name %}
+        {% if app.request.get('riskTol') == i.name %}
             <option value="{{ i.name }}" selected>{{ i.name}}</option>
         {% else %}
             <option value="{{ i.name }}">{{ i.name }}</option>

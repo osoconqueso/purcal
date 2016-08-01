@@ -12,14 +12,16 @@ class AppController extends Controller
 {
     public function indexAction(Request $request)
     {
-        $acct_type = $request->query->get('acct_type');
-        $risk_tol = $request->query->get('risk_tol');
+        $acctType = $request->query->get('acctType');
+        $riskTol = $request->query->get('riskTol');
         $model = $request->query->get('model');
+        $dollarAmount = $request->query->get('dollarAmount');
         
         $params = array(
-            'acct_type' => $acct_type,
-            'risk_tol' => $risk_tol,
-            'model' => $model
+            'acctType' => $acctType,
+            'riskTol' => $riskTol,
+            'model' => $model,
+            'dollarAmount' => $dollarAmount
         );
 
         return $this->render('AppBundle:Default:index.html.twig', [
