@@ -48,4 +48,9 @@ class ModelService
 
         return $this->model;
     }
+    
+    public function getModelsByAcctTypeAndRiskTol($acctTypeId, $riskTolId) 
+    {
+     return $this->modelRepo->getModels($acctTypeId, $riskTolId);
+    }
 }

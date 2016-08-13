@@ -10,4 +10,19 @@ namespace AppBundle\Repository;
  */
 class ModelRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getModels($acctTypeId, $riskTolId)
+    {
+        $query = "select
+              m.id, m.name
+            FROM model_asset_class mac
+            INNER JOIN account_type at ON (mac.account_type_id=at.id)
+            INNER JOIN risk_tolerance rt ON (mac.risk_tolerance_id=rt.id)
+            INNER JOIN model m ON (mac.model_id=m.id)
+            WHERE mac.account_type_id= $acctTypeId AND mac.risk_tolerance_id= $riskTolId
+            GROUP BY mac.model_id";
+
+        $stmt = $this->getEntityManager()->getConnection()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }

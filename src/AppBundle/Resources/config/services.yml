@@ -11,3 +11,7 @@ services:
     service.model:
         class: AppBundle\Service\ModelService
         arguments: ["@doctrine"]
+
+    #service.url:
+        #class: AppBundle\Service\UrlService
+#        arguments: ["%app_url%"]

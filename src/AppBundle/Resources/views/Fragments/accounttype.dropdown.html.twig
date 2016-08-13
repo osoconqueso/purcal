@@ -1,10 +1,7 @@
-<select>
+<select id="accountType">
+    <option value="">select account type</option>
     {% for i in accountTypes %}
-        {% if app.request.get('acctType') == i.type %}
-            <option value="{{ i.type }}" selected>{{ i.type }}</option>
-        {% else %}
-            <option value="{{ i.type }}">{{ i.type }}</option>
-        {% endif %}
+        <option value="{{ i.id }}">{{ i.type }}</option>
     {% endfor %}
 </select>
 
