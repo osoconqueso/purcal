@@ -6,3 +6,8 @@ app_populateModels:
     path:     /populate_models
     defaults: { _controller: AppBundle:App:populateModels }
     methods: [ "POST" ]
+
+app.calculate:
+    path:     /calculate
+    defaults: { _controller: AppBundle:App:calculate }
+    methods: [ "POST" ]

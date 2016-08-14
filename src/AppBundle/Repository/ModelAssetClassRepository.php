@@ -11,4 +11,21 @@ namespace AppBundle\Repository;
 class ModelAssetClassRepository extends \Doctrine\ORM\EntityRepository
 {
 
+    public function getPercentageValues($accountType, $riskTol, $model)
+    {
+        $query = "select
+                  ac.name, mac.percentage_value
+                  from model_asset_class mac
+                  INNER JOIN account_type at ON (mac.account_type_id=at.id)
+                  INNER JOIN risk_tolerance rt ON (mac.risk_tolerance_id=rt.id)
+                  INNER JOIN model m ON (mac.model_id=m.id)
+                  INNER JOIN asset_class ac ON (mac.asset_class_id=ac.id)
+                  WHERE mac.account_type_id=$accountType AND mac.risk_tolerance_id=$riskTol AND mac.model_id=$model";
+        
+        $stmt = $this->getEntityManager()->getConnection()->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+        
+    }
+
 }

@@ -386,6 +386,9 @@
     <service id="service.model" class="AppBundle\Service\ModelService">
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="service.calculator" class="AppBundle\Service\CalculatorService">
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>
@@ -501,7 +504,7 @@
                   <tag name="cache.pool"/>
                   <argument>qnlJLntDFS</argument>
                   <argument></argument>
-                  <argument>-Ljfg2EtZ5bv6Xum4+UWqw</argument>
+                  <argument>nKW5sEAfvHa3RIPMTMsEPg</argument>
                   <argument>/var/www/purcal/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -514,7 +517,7 @@
                   <tag name="cache.pool"/>
                   <argument>cDqo1lxW5e</argument>
                   <argument></argument>
-                  <argument>-Ljfg2EtZ5bv6Xum4+UWqw</argument>
+                  <argument>nKW5sEAfvHa3RIPMTMsEPg</argument>
                   <argument>/var/www/purcal/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -846,7 +849,7 @@
       <tag name="cache.pool"/>
       <argument>--d4nbIkD-</argument>
       <argument></argument>
-      <argument>-Ljfg2EtZ5bv6Xum4+UWqw</argument>
+      <argument>nKW5sEAfvHa3RIPMTMsEPg</argument>
       <argument>/var/www/purcal/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1582,7 +1585,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57af603e375d94.04836437</argument>
+            <argument>57b0ebf06ee814.90048103</argument>
           </service>
         </argument>
       </argument>
@@ -1716,7 +1719,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57af603e375d94.04836437</argument>
+            <argument>57b0ebf06ee814.90048103</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>

@@ -8,47 +8,16 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Service\AccountTypeService;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use AppBundle\Service\CalculatorService;
 
 class AppController extends Controller
 {
-    public function indexAction(Request $request)
+    public function indexAction()
     {
-//        $urlService = $this->get('service.url');
-//        $urlObject = new UrlService($request);
-//        print_r($urlObject);
-////        $params = $urlObject->params;
-////        $url = $urlService->urlBuilder($params);
-////        print($url);
-
-
-        $params = [];
-        $acctType = $request->query->get('acctType');
-        if (isset($acctType)) {
-            $params['acctType'] = $acctType;
-        }
-
-        $riskTol = $request->query->get('riskTol');
-        if (isset($riskTol)) {
-            $params['riskTol'] = $riskTol;
-        }
-
-        $model = $request->query->get('model');
-        if (isset($model)) {
-            $params['model'] = $model;
-        }
-
-        $dollarAmount = $request->query->get('dollarAmount');
-        if (isset($dollarAmount)) {
-            $params['dollarAmount'] = $dollarAmount;
-        }
-
-        $this->params = $params;
-
         return $this->render('AppBundle:Default:index.html.twig', [
         'accountTypes' => $this->getAllAccountTypes(),
         'riskTolerances' => $this->getAllRiskTolerances() ,
         'models' => $this->getAllModels()
-//        'params' => $params
         ]);
     }
 
@@ -87,4 +56,11 @@ class AppController extends Controller
 
     }
 
+    public function calculateAction(Request $request)
+    {
+        $dollarAmount = $request->get('dollarAmount');
+        
+        $data = $this->get('service.calculator')->calculateDollarAmount($dollarAmount);
+        return $this->json($data);
+    }
 }

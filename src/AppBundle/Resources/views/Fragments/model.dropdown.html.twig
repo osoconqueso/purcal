@@ -1,7 +1,3 @@
-<select>
-    {% for i in models %}
-        {% if models is defined and models is not empty%}>
-            <option value="{{ i.name }}" selected>{{ i.name }}</option>
-        {% endif %}
-    {% endfor %}
+<select id="model" name="model">
+    <option value="">select other options</option>
 </select>
