@@ -48,7 +48,12 @@ class ModelService
 
         return $this->model;
     }
-    
+
+    /**
+     * @param $acctTypeId int
+     * @param $riskTolId int
+     * @return array
+     */
     public function getModelsByAcctTypeAndRiskTol($acctTypeId, $riskTolId) 
     {
      return $this->modelRepo->getModels($acctTypeId, $riskTolId);

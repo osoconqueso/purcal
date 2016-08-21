@@ -27,27 +27,40 @@ $('#riskTol').on('change', function () {
     })
 });
 
-$('#allocationForm').on('submit', function () {
-    var riskTolId = $('#riskTol').val();
-    var accountTypeId = $('#accountType').val();
-    var model = $(this).val();
-    var dollarAmount = $(this).val();
-    console.log(model + dollarAmount);
+$('#allocationForm').on('submit', function (e) {
+    e.preventDefault();
+    var data = $(this).serialize();
 
     $.ajax({
             url: "/calculate",
             dataType: "json",
             method: "POST",
-            data: {
-                "accountTypeId": accountTypeId,
-                "riskTolId": riskTolId,
-                "modelId": modelId,
-                "dollarAmount": dollarAmount
-            }
+            data: data
         }
     ).done(function (data) {
 
-        
+        var tableString = '<table class="table-responsive table-bordered table-hover">' +
+                          '<thead></thead>' +
+                          '<tr></tr>' +
+                          '<th>Asset Class</th>' +
+                          '<th>Percentage Value</th>' +
+                          '<th>Dollar Amount</th>'  ;
 
+        for(var i in data){
+            var row = data[i];
+
+            var value = row.value;
+            var calculatedValue = row.calculatedValue;
+            var assetClass = row.assetClass;
+
+            tableString += '<tr>' +
+                '<td>'+assetClass+'</td>' +
+                '<td>'+value+'%</td>' +
+                '<td>$'+calculatedValue+'</td>' +
+                '</tr>';
+        }
+
+        $("#div-calculations-table").html(tableString);
+        
     })
 });

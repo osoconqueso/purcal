@@ -20,7 +20,7 @@ class ModelAssetClassRepository extends \Doctrine\ORM\EntityRepository
                   INNER JOIN risk_tolerance rt ON (mac.risk_tolerance_id=rt.id)
                   INNER JOIN model m ON (mac.model_id=m.id)
                   INNER JOIN asset_class ac ON (mac.asset_class_id=ac.id)
-                  WHERE mac.account_type_id=$accountType AND mac.risk_tolerance_id=$riskTol AND mac.model_id=$model";
+                  WHERE mac.account_type_id='$accountType' AND mac.risk_tolerance_id='$riskTol' AND mac.model_id='$model'";
         
         $stmt = $this->getEntityManager()->getConnection()->prepare($query);
         $stmt->execute();

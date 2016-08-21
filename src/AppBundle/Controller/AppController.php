@@ -12,12 +12,13 @@ use AppBundle\Service\CalculatorService;
 
 class AppController extends Controller
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         return $this->render('AppBundle:Default:index.html.twig', [
         'accountTypes' => $this->getAllAccountTypes(),
-        'riskTolerances' => $this->getAllRiskTolerances() ,
-        'models' => $this->getAllModels()
+        'riskTolerances' => $this->getAllRiskTolerances(),
+        'models' => $this->getAllModels(),
+        'percentageValues' => $this->calculateAction($request)
         ]);
     }
 
@@ -46,6 +47,14 @@ class AppController extends Controller
         return $models;
     }
 
+    protected function getPercentageValues()
+    {
+        $calculatorService = $this->get('service.calculator');
+        $percentageValues = $calculatorService->getPercentageValues();
+
+        return $percentageValues;
+    }
+
     public function populateModelsAction(Request $request)
     {
         $accountTypeId = $request->get('accountTypeId');
@@ -59,8 +68,12 @@ class AppController extends Controller
     public function calculateAction(Request $request)
     {
         $dollarAmount = $request->get('dollarAmount');
-        
-        $data = $this->get('service.calculator')->calculateDollarAmount($dollarAmount);
+        $accountTypeId = $request->get('accountType');
+        $riskTolId = $request->get('riskTol');
+        $modelId = $request->get('model');
+
+
+        $data = $this->get('service.calculator')->calculateDollarAmount($dollarAmount, $accountTypeId, $riskTolId, $modelId);
         return $this->json($data);
     }
 }
