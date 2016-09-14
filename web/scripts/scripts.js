@@ -39,7 +39,7 @@ $('#allocationForm').on('submit', function (e) {
         }
     ).done(function (data) {
 
-        var tableString = '<table class="table-responsive table-bordered table-hover">' +
+        var tableString = '<table class="table-responsive table-bordered table-hover col-md-6 col-md-offset-3">' +
                           '<thead></thead>' +
                           '<tr></tr>' +
                           '<th>Asset Class</th>' +
