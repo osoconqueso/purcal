@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e3d50f3-15fd-4c35-8444-5e03b2daf346" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
-    </list>
+    <list default="true" id="5e3d50f3-15fd-4c35-8444-5e03b2daf346" name="Default" comment="" />
     <ignored path="purcal.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -96,13 +93,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Version20160915234145.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Version20160915234145.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/DoctrineMigrations/Version20160915234145.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
               <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
               <folding>
                 <marker date="1473982971090" expanded="true" signature="433:4664" ph="INSERT INTO `model_asset_class`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Version20160915234730.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/DoctrineMigrations/Version20160915234730.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+              <folding>
+                <marker date="1473983279849" expanded="true" signature="429:505" ph="INSERT INTO `risk_tolerance`... " />
               </folding>
             </state>
           </provider>
@@ -184,6 +193,7 @@
         <option value="$PROJECT_DIR$/app/config/parameters_prod.yml" />
         <option value="$PROJECT_DIR$/app/config/config_prod.yml" />
         <option value="$PROJECT_DIR$/app/DoctrineMigrations/Version20160915234145.php" />
+        <option value="$PROJECT_DIR$/app/DoctrineMigrations/Version20160915234730.php" />
       </list>
     </option>
   </component>
@@ -584,12 +594,12 @@
       <workItem from="1472004655388" duration="1337000" />
       <workItem from="1472778302704" duration="705000" />
       <workItem from="1473815675845" duration="1246000" />
-      <workItem from="1473981898227" duration="1073000" />
+      <workItem from="1473981898227" duration="1382000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116278000" />
+    <option name="totallyTimeSpent" value="116587000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -640,13 +650,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/bundles/framework/css/body.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/robots.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -972,6 +975,16 @@
           <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
           <folding>
             <marker date="1473982971090" expanded="true" signature="433:4664" ph="INSERT INTO `model_asset_class`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/DoctrineMigrations/Version20160915234730.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+          <folding>
+            <marker date="1473983279849" expanded="true" signature="429:505" ph="INSERT INTO `risk_tolerance`... " />
           </folding>
         </state>
       </provider>
